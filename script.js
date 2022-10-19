@@ -114,6 +114,7 @@ function firstPlay(e) {
     firstPlayerPlayed.push(e.target.id);
     randomCpuChoice = randomCpuChoice.filter(item =>item !== e.target.id);
     turn = "o";
+    move++;
     if (firstPlayerPlayed.includes("b1")&&firstPlayerPlayed.includes("b2")&&firstPlayerPlayed.includes("b3")||
     firstPlayerPlayed.includes("b4")&&firstPlayerPlayed.includes("b5")&&firstPlayerPlayed.includes("b6")||
     firstPlayerPlayed.includes("b7")&&firstPlayerPlayed.includes("b8")&&firstPlayerPlayed.includes("b9")||
@@ -124,7 +125,7 @@ function firstPlay(e) {
     firstPlayerPlayed.includes("b3")&&firstPlayerPlayed.includes("b5")&&firstPlayerPlayed.includes("b7")) {
     resultPanel("p1");
     gameStatus = "over";
-} else { if (move === 5) {gameTieCheck()};
+} else { if (move === 6) {gameTieCheck()};
 };
 }
 
@@ -135,8 +136,7 @@ function SecondPlay(e) {
   e.target.classList.remove("free-box");
   secondPlayerPlayed.push(e.target.id);
   randomCpuChoice = randomCpuChoice.filter(item =>item !== e.target.id);
-  turn = "x";theme-btn
-  move++;
+  turn = "x";
   if (secondPlayerPlayed.includes("b1")&&secondPlayerPlayed.includes("b2")&&secondPlayerPlayed.includes("b3")||
   secondPlayerPlayed.includes("b4")&&secondPlayerPlayed.includes("b5")&&secondPlayerPlayed.includes("b6")||
   secondPlayerPlayed.includes("b7")&&secondPlayerPlayed.includes("b8")&&secondPlayerPlayed.includes("b9")||
@@ -155,41 +155,37 @@ function cpuPlay() {
     secondPlayerMark.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" x="0" y="0" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512" xml:space="preserve" class="o-mark"><g><g><path d="m256 512c-68.38 0-132.667-26.629-181.02-74.98-48.351-48.353-74.98-112.64-74.98-181.02s26.629-132.667 74.98-181.02c48.353-48.351 112.64-74.98 181.02-74.98s132.667 26.629 181.02 74.98c48.351 48.353 74.98 112.64 74.98 181.02s-26.629 132.667-74.98 181.02c-48.353 48.351-112.64 74.98-181.02 74.98zm0-422c-91.532 0-166 74.467-166 166s74.468 166 166 166 166-74.467 166-166-74.468-166-166-166z" fill="#eaaf3d" data-original="#000000" class=""></path></g></g></svg>`;
     if (gameStatus !== "over") {
       switch (move) {
-        case 1:
+        case 2:
           getRandomBox();
           const cpuBox = document.getElementById(randomBox);
           cpuBox.append(secondPlayerMark);
           randomCpuChoice = randomCpuChoice.filter(item =>item !== randomBox);
           secondPlayerPlayed.push(randomBox);
           cpuBox.classList.remove("free-box");
-          move++;
           break;
-          case 2:
+          case 3:
             getRandomBox();
             const cpuBox2 = document.getElementById(randomBox);
             cpuBox2.append(secondPlayerMark);
             randomCpuChoice = randomCpuChoice.filter(item =>item !== randomBox);
             secondPlayerPlayed.push(randomBox);
             cpuBox2.classList.remove("free-box");
-            move++;
             break;
-            case 3:
+            case 4:
               getRandomBox();
               const cpuBox3 = document.getElementById(randomBox);
               cpuBox3.append(secondPlayerMark);
               randomCpuChoice = randomCpuChoice.filter(item =>item !== randomBox);
               secondPlayerPlayed.push(randomBox);
               cpuBox3.classList.remove("free-box");
-              move++;
               break;
-              case 4:
+              case 5:
                 getRandomBox();
                 const cpuBox4 = document.getElementById(randomBox);
                 cpuBox4.append(secondPlayerMark);
                 randomCpuChoice = randomCpuChoice.filter(item =>item !== randomBox);
                 secondPlayerPlayed.push(randomBox);
                 cpuBox4.classList.remove("free-box");
-                move++;
                 break;
         default:
           break;
