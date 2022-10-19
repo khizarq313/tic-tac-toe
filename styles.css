@@ -1,0 +1,197 @@
+:root{
+    --color:#ffff;
+    --background:linear-gradient(to top right, #000000 ,#15202B );
+    --button-color:#36c1be;
+    --button-bg:#192734;
+    --button-hover:#36c1be;
+    --theme2-color:white;
+    --theme2-background:#222831;
+    --theme2-button-color:white;
+    --theme2-button-bg:#393E46;
+    --theme3-color:white;
+    --theme3-background:#2E0249;
+    --theme3-button-color:white;
+    --theme3-button-bg:#570A57;
+    --theme4-color:black;
+    --theme4-background:#CBF1F5;
+    --theme4-button-color:black;
+    --theme4-button-bg:#FFCCCB;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  text-align: center;
+  height: 100vh;
+  width: 100vw;
+  background: var(--background);
+  color: var(--color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.result-text:hover,
+.result-text:active,
+button:hover,
+button:active {
+  background: var(--button-bg);
+  color: var(--color);
+  border-radius: 5px;
+  box-shadow: 0 0 5px var(--button-hover), 0 0 25px var(--button-hover), 0 0 50px var(--button-hover),
+    0 0 100px var(--button-hover);
+}
+
+button,.result-text {
+  display: inline-block;
+  padding: 10px 20px;
+  border: none;
+  background-color: var(--button-bg);
+  color:var(--button-color) ;
+  font-size: 16px;
+  transition: 0.5s;
+  letter-spacing: 4px;
+}
+
+.btn-for-theme{
+    margin: 1rem;
+    color: white;
+}
+
+.theme1-btn{
+    background:linear-gradient(to top right, #000000 ,#15202B );
+}
+
+.theme2-btn{
+    background:linear-gradient(to top right, #222831 ,#393E46 );
+}
+
+.theme3-btn{
+    background:linear-gradient(to top right, #2E0249 ,#570A57 );
+}
+
+.theme4-btn{
+    background:linear-gradient(to top right, #CBF1F5 ,#FFCCCB );
+    color: black;
+}
+
+.theme-btn-container{
+    display: flex;
+    justify-content: end;
+}
+
+.theme-btn{
+    width: 5rem;
+    height: 5rem;
+    padding: 1.2rem;
+    border-radius: 100%;
+    line-height: 0;
+}
+
+.result-text{
+    color: chartreuse;
+}
+
+.single-player-btn,
+.multi-player-btn {
+  margin: 1rem 0;
+}
+
+.overlay1,
+.overlay2 {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 50;
+  opacity: 0.5;
+  background-color: black;
+  width: 100vw;
+  height: 100vh;
+}
+
+.pause-screen,
+.result-screen,
+.theme-screen {
+  height: 15rem;
+  position: fixed;
+  left: 50;
+  top: 50;
+  transform: translate(-50%-50%);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.menu-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.logo-container {
+  text-align: start;
+  margin-bottom: 2rem;
+}
+
+.x-mark-logo,
+.o-mark-logo {
+  margin: 0.2rem;
+  height: 3rem;
+  width: 3rem;
+}
+
+.mene-btn-holder {
+  display: flex;
+  justify-content: end;
+}
+
+.scoreboard {
+  margin: 2rem 0;
+  width: 30rem;
+  display: flex;
+  justify-content: space-around;
+}
+
+.grid {
+  display: grid;
+  gap: 5px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-box {
+  height: 10rem;
+  width: 10rem;
+  background-color: 233329;
+  border-radius: 8px;
+  border: none;
+}
+
+.x-mark,
+.o-mark {
+  margin: 0.2rem;
+  height: 3rem;
+  width: 3rem;
+}
+
+.hidden {
+  display: none;
+}
+
+@media screen and (max-width: 500px) {
+    html {
+      font-size: 55%;
+    }
+  }
