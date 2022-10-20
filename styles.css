@@ -66,8 +66,12 @@ button,.result-text {
 }
 
 .btn-for-theme{
-    margin: 1rem;
+    margin: 0.5rem;
     color: white;
+}
+
+.btn-for-menu{
+  margin: 0.5rem;
 }
 
 .theme1-btn{
@@ -90,6 +94,10 @@ button,.result-text {
 .theme-btn-container{
     display: flex;
     justify-content: end;
+}
+
+.brush{
+  fill: var(--button-hover);
 }
 
 .theme-btn{
@@ -115,16 +123,28 @@ button,.result-text {
   left: 0;
   top: 0;
   z-index: 50;
-  opacity: 0.5;
+  opacity: 0.3;
   background-color: black;
   width: 100vw;
   height: 100vh;
 }
 
+.score-box{
+  background: var(--button-bg);
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.tie-box{
+  padding:1rem 2rem;
+}
+
 .pause-screen,
 .result-screen,
 .theme-screen {
-  height: 15rem;
+  background: var(--background);
+  padding: 5rem 6rem;
+  border: 1px solid var(--button-hover);
   position: fixed;
   left: 50;
   top: 50;
@@ -139,6 +159,7 @@ button,.result-text {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  margin-top: -15rem;
 }
 
 .logo-container {
@@ -160,9 +181,8 @@ button,.result-text {
 
 .scoreboard {
   margin: 2rem 0;
-  width: 30rem;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .grid {

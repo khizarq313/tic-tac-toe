@@ -25,6 +25,8 @@ const theme2Btn = document.querySelector(".theme2-btn");
 const theme3Btn = document.querySelector(".theme3-btn");
 const theme4Btn = document.querySelector(".theme4-btn");
 const buttons = document.querySelectorAll("button");
+const scoreBox = document.querySelectorAll(".score-box");
+const brushLogo = document.querySelector(".brush");
 
 let xScoreTally = [];
 let tieScoreTally = [];
@@ -45,11 +47,19 @@ function forthTheme() {
     button.style.color="var(--theme4-button-color)";
     button.style.backgroundColor="var(--theme4-button-bg)";
     button.style.setProperty("--button-hover", "#ff726f");
-    theme1Btn.style.color="white";
-    theme2Btn.style.color="white";
-    theme3Btn.style.color="white";
-    closePanel();
 });
+scoreBox.forEach(button=> {
+  button.style.color="var(--theme4-button-color)";
+  button.style.backgroundColor="var(--theme4-button-bg)";
+  button.style.setProperty("--button-hover", "#ff726f");
+});
+theme1Btn.style.color="white";
+theme2Btn.style.color="white";
+theme3Btn.style.color="white";
+closePanel();
+themeScreen.style.setProperty("--button-hover", "#ff726f");
+resultScreen.style.setProperty("--button-hover", "#ff726f");
+pauseScreen.style.setProperty("--button-hover", "#ff726f");
 }
 
 function thirdTheme() {
@@ -59,9 +69,17 @@ function thirdTheme() {
     button.style.color="var(--theme3-button-color)";
     button.style.backgroundColor="var(--theme3-button-bg)";
     button.style.setProperty("--button-hover", "#A91079");
-    theme4Btn.style.color="black";
-    closePanel();
 });
+scoreBox.forEach(button=> {
+  button.style.color="var(--theme3-button-color)";
+  button.style.backgroundColor="var(--theme3-button-bg)";
+  button.style.setProperty("--button-hover", "#A91079");
+});
+theme4Btn.style.color="black";
+closePanel();
+themeScreen.style.setProperty("--button-hover", "#A91079");
+resultScreen.style.setProperty("--button-hover", "#A91079");
+pauseScreen.style.setProperty("--button-hover", "#A91079");
 }
 
 function secondTheme() {
@@ -71,9 +89,17 @@ function secondTheme() {
     button.style.color="var(--theme2-button-color)";
     button.style.backgroundColor="var(--theme2-button-bg)";
     button.style.setProperty("--button-hover", "#00ADB5");
-    theme4Btn.style.color="black";
-    closePanel();
 });
+scoreBox.forEach(button=> {
+  button.style.color="var(--theme2-button-color)";
+  button.style.backgroundColor="var(--theme2-button-bg)";
+  button.style.setProperty("--button-hover", "#00ADB5");
+});
+theme4Btn.style.color="black";
+closePanel();
+themeScreen.style.setProperty("--button-hover", "#00ADB5");
+resultScreen.style.setProperty("--button-hover", "#00ADB5");
+pauseScreen.style.setProperty("--button-hover", "#00ADB5");
 }
 
 function firstTheme() {
@@ -83,9 +109,17 @@ function firstTheme() {
     button.style.color="var(--button-color)";
     button.style.backgroundColor="var(--button-bg)";
     button.style.setProperty("--button-hover", "#36c1be");
-    theme4Btn.style.color="black";
-    closePanel();
-})
+});
+scoreBox.forEach(button=> {
+  button.style.color="var(--button-color)";
+  button.style.backgroundColor="var(--button-bg)";
+  button.style.setProperty("--button-hover", "#36c1be");
+});
+theme4Btn.style.color="black";
+closePanel();
+themeScreen.style.setProperty("--button-hover", "#36c1be");
+resultScreen.style.setProperty("--button-hover", "#36c1be");
+pauseScreen.style.setProperty("--button-hover", "#36c1be");
 }
 
 function getRandomBox() {
@@ -247,8 +281,12 @@ function resultPanel(winner) {
   overlay2.classList.remove("hidden");
   resultScreen.classList.remove("hidden");
   if (winner === "p1") {
-    resultText.innerHTML=`Player 1 Won!`;
     xScoreTally.push("won");
+    if (mode === "singlePlayerMode") {
+      resultText.innerHTML=`Player Won!`;
+    } else if (mode === "dualPlayerMode") {
+      resultText.innerHTML=`Player 1 Won!`;
+    }
   } else if (winner === "p2") {
     resultText.innerHTML=`Player 2 Won!`;
     oScoreTally.push("won");
