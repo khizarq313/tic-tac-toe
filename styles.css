@@ -156,10 +156,14 @@ button,.result-text {
   justify-content: space-around;
 }
 
-.menu-screen,.game-screen {
+.menu-screen {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  margin-top: -15rem;
+}
+
+.game-screen{
   margin-top: -15rem;
 }
 
@@ -187,6 +191,7 @@ button,.result-text {
 }
 
 .grid {
+  width: 3rem;
   display: grid;
   gap: 5px;
   grid-template-columns: repeat(3, 1fr);
@@ -214,5 +219,8 @@ button,.result-text {
 @media screen and (max-width: 500px) {
     html {
       font-size: 55%;
+    }
+    .grid{
+      margin-left: 1rem;
     }
   }
